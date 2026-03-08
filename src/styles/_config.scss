@@ -1,0 +1,56 @@
+@use 'sass:map';
+@use 'sass:color' as sass-color;
+
+$colors: (
+    primary: #ff6044,
+    secondary: #121313,
+    text-color: #fff,
+
+    work: #b13b3d,
+    personal: #c4953d,
+    study: #33b2bc,
+    delete: #ff6d70,
+);
+
+$font-family: (
+    base: (
+        'Open Sans',
+        sans-serif,
+    ),
+    logo: (
+        'Krona One',
+        sans-serif,
+    ),
+);
+
+$font-size: (
+    xs: 0.75rem,
+    // 12px
+    sm: 0.875rem,
+    // 14px
+    base: 1rem,
+    // 16px
+    lg: 1.125rem,
+    // 18px
+    xl: 1.25rem,
+    // 20px
+    xxl: 1.5rem,
+    // 24px
+    xxxl: 2rem, // 32px
+);
+
+$font-weight: (
+    light: 300,
+    normal: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+);
+
+@function color($key) {
+    @return map.get($colors, $key);
+}
+
+@function font-size($key) {
+    @return map.get($font-size, $key);
+}
