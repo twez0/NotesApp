@@ -1,0 +1,15 @@
+@use '../../styles/config' as *;
+
+.add-btn {
+    max-width: 50px;
+    max-height: 50px;
+    border: 1px solid transparent;
+    border-radius: 100px;
+    padding: 10px;
+    background: color(primary);
+    transition: all 0.3s ease;
+    &:hover {
+        border: 1px solid color(text-color);
+        background: transparent;
+    }
+}

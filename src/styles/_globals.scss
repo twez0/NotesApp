@@ -5,6 +5,10 @@
 
 html {
     font-size: 16px;
+
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
 }
 
 body {
@@ -31,4 +35,12 @@ body {
 }
 .--personal {
     background: color(personal);
+}
+
+.delete-icon {
+    color: color(delete);
+    transition: color 0.3s ease;
+    &:hover {
+        color: #ff2f32;
+    }
 }

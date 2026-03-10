@@ -14,6 +14,9 @@
     font-weight: font-weight(regular);
     cursor: default;
     transition: all 0.3s ease;
+    @media (max-width: 768px) {
+        max-height: 115px;
+    }
 
     &__category {
         display: flex;

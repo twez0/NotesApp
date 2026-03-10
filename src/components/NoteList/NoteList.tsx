@@ -1,4 +1,5 @@
 import { type Note } from '../../types/note.types';
+import AddButton from '../AddButton/addButton.tsx';
 import NoteItem from '../NoteItem/NoteItem.tsx';
 import './NoteList.scss';
 
@@ -17,6 +18,7 @@ const NoteList = ({ notes, onDelete }: NoteListProps) => {
                     onDelete={() => onDelete(note.id)}
                 ></NoteItem>
             ))}
+            <AddButton></AddButton>
         </div>
     );
 };

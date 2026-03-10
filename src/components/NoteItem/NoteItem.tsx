@@ -23,7 +23,7 @@ const NoteItem = ({ note, onDelete }: NoteItemProps) => {
             <div className='note-card__info'>
                 <p>{date}</p>
                 <button onClick={onDelete}>
-                    <DeleteIcon size={30} color={'#FF6D70'}></DeleteIcon>
+                    <DeleteIcon size={30}></DeleteIcon>
                 </button>
             </div>
         </div>
