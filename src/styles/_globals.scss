@@ -16,4 +16,19 @@ body {
 .container {
     max-width: 1050px;
     margin: 0 auto;
+    padding: 0px 10px 0px 10px;
+
+    @media (max-width: 1024px) {
+        max-width: 900px;
+    }
+}
+
+.--work {
+    background: color(work);
+}
+.--study {
+    background: color(study);
+}
+.--personal {
+    background: color(personal);
 }

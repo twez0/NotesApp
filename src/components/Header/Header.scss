@@ -1,0 +1,22 @@
+@use '../../styles/config' as *;
+@use 'sass:map';
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0px 20px 0px;
+
+    &__logo {
+        font-family: map.get($font-family, logo);
+        font-size: font-size(xxxl);
+        background: linear-gradient(90deg, #ff6044 0%, #e6441c 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        cursor: pointer;
+    }
+    &__btn {
+        border-radius: 100px;
+        padding: 10px;
+        background: color(primary);
+    }
+}

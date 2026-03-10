@@ -1,5 +1,6 @@
+import Header from './components/Header/Header.tsx';
 import NoteForm from './components/NoteForm/NoteForm.tsx';
-import NoteItem from './components/NoteItem/NoteItem.tsx';
+import NoteList from './components/NoteList/NoteList.tsx';
 import useLocalStorage from './hooks/useLocalStorage.ts';
 import './styles/main.scss';
 import { type Note } from './types/note.types.ts';
@@ -7,21 +8,20 @@ import { type Note } from './types/note.types.ts';
 function App() {
     const [notes, setNotes] = useLocalStorage<Note[]>('notes', []);
 
+    const deleteNote = (id: number) => {
+        setNotes(prev => prev.filter(note => note.id !== id));
+    };
+
     return (
         <>
-            <NoteForm
-                onAdd={newNote => setNotes(prev => [...prev, newNote])}
-            ></NoteForm>
+            <div className='container'>
+                <Header></Header>
+                <NoteForm
+                    onAdd={newNote => setNotes(prev => [...prev, newNote])}
+                ></NoteForm>
 
-            <NoteItem
-                id={0}
-                title={'Разработка компонента поиска'}
-                text={
-                    'Нужно сделать компонент для поиска пользователей на React'
-                }
-                date={'03.03.2026'}
-                category={'Работа'}
-            ></NoteItem>
+                <NoteList notes={notes} onDelete={deleteNote}></NoteList>
+            </div>
         </>
     );
 }

@@ -6,4 +6,17 @@ export interface Note {
     category: 'Study' | 'Personal' | 'Work';
 }
 
-export type CreateNoteInput = Omit<Note, 'id' | 'date'>;
+export const categoryConfig = {
+    Study: {
+        label: 'Учёба',
+        className: '--study',
+    },
+    Personal: {
+        label: 'Личное',
+        className: '--personal',
+    },
+    Work: {
+        label: 'Работа',
+        className: '--work',
+    },
+};
