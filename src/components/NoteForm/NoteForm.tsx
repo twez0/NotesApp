@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { type Note } from '../../types/note.types';
 import CloseButton from '../CloseButton/CloseButton.tsx';
 import './NoteForm.scss';
@@ -13,6 +13,8 @@ const NoteForm = ({ isOpen, closeForm, onAdd }: NoteFormProps) => {
     const [title, setTitle] = useState<string>('');
     const [text, setText] = useState<string>('');
     const [category, setCategory] = useState<Note['category']>('Work');
+
+    const titleInputRef = useRef<HTMLInputElement>(null);
 
     function addNote() {
         if (!title.trim() || !text.trim()) {
@@ -29,20 +31,32 @@ const NoteForm = ({ isOpen, closeForm, onAdd }: NoteFormProps) => {
         };
 
         onAdd(newNote);
+
+        setTitle('');
+        setText('');
+        setCategory('Work');
+
+        titleInputRef.current?.focus();
     }
 
     return (
-        <div className={`form-bg ${isOpen && 'open'}`}>
-            <div className={`add-form ${isOpen && 'form-visible'}`}>
+        <div className={`form-bg ${isOpen && 'open'}`} onClick={closeForm}>
+            <div
+                className={`add-form ${isOpen && 'form-visible'}`}
+                onClick={e => e.stopPropagation()}
+            >
                 <CloseButton onClick={closeForm}></CloseButton>
                 <h3>Добавить новую задачу</h3>
                 <input
+                    ref={titleInputRef}
                     className='add-form__title'
+                    placeholder='Заголовок'
                     value={title}
                     onChange={e => setTitle(e.target.value)}
                 />
                 <textarea
                     className='add-form__text'
+                    placeholder='Заметка'
                     value={text}
                     onChange={e => setText(e.target.value)}
                 />
