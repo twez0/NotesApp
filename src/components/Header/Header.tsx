@@ -1,11 +1,15 @@
-import AddButton from '../AddButton/addButton.tsx';
+import AddButton from '../AddButton/AddButton.tsx';
 import './Header.scss';
 
-const Header = () => {
+interface HeaderProps {
+    openForm: () => void;
+}
+
+const Header = ({ openForm }: HeaderProps) => {
     return (
         <header className='header'>
             <h1 className='header__logo'>ToDay</h1>
-            <AddButton></AddButton>
+            <AddButton onClick={openForm}></AddButton>
         </header>
     );
 };

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Header from './components/Header/Header.tsx';
 import NoteForm from './components/NoteForm/NoteForm.tsx';
 import NoteList from './components/NoteList/NoteList.tsx';
@@ -7,6 +8,10 @@ import { type Note } from './types/note.types.ts';
 
 function App() {
     const [notes, setNotes] = useLocalStorage<Note[]>('notes', []);
+    const [isFormOpen, setIsFormOpen] = useState<boolean>(false);
+
+    const openForm = () => setIsFormOpen(true);
+    const closeForm = () => setIsFormOpen(false);
 
     const deleteNote = (id: number) => {
         setNotes(prev => prev.filter(note => note.id !== id));
@@ -15,12 +20,18 @@ function App() {
     return (
         <>
             <div className='container'>
-                <Header></Header>
+                <Header openForm={openForm}></Header>
                 <NoteForm
+                    isOpen={isFormOpen}
+                    closeForm={closeForm}
                     onAdd={newNote => setNotes(prev => [...prev, newNote])}
                 ></NoteForm>
 
-                <NoteList notes={notes} onDelete={deleteNote}></NoteList>
+                <NoteList
+                    openForm={openForm}
+                    notes={notes}
+                    onDelete={deleteNote}
+                ></NoteList>
             </div>
         </>
     );
