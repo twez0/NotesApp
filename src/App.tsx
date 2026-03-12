@@ -10,6 +10,10 @@ function App() {
     const [notes, setNotes] = useLocalStorage<Note[]>('notes', []);
     const [isFormOpen, setIsFormOpen] = useState<boolean>(false);
 
+    const [search, setSearch] = useState<string>('');
+    const [debouncedSearch, setDebouncedSearch] = useState<string>('');
+    const [filter, setFilter] = useState<'All' | Note['category']>('All');
+
     const openForm = () => setIsFormOpen(true);
     const closeForm = () => setIsFormOpen(false);
 

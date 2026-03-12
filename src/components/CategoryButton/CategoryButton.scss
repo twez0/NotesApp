@@ -1,0 +1,36 @@
+@use '../../styles/config' as *;
+
+.category-btn {
+    width: 125px;
+    min-height: 30px;
+    border-radius: 25px;
+    color: color(text-color);
+    border: 1px solid color(primary);
+    font-size: font-size(base);
+    padding: 5px 0px 5px 0px;
+    transition: all 0.4s ease;
+}
+.filter-category-btn {
+    width: 90px;
+    min-height: 35px;
+    border-radius: 25px;
+    color: color(text-color);
+    border: 1px solid color(primary);
+    background: color(primary);
+    font-size: font-size(base);
+    padding: 5px 0px 5px 0px;
+    transition: all 0.4s ease;
+}
+
+.category-btn.Work.active {
+    border: 1px solid color(work);
+    background: color(work);
+}
+.category-btn.Personal.active {
+    border: 1px solid color(personal);
+    background: color(personal);
+}
+.category-btn.Study.active {
+    border: 1px solid color(study);
+    background: color(study);
+}

@@ -72,17 +72,6 @@
         gap: 25px;
     }
 
-    &__category-btn {
-        width: 125px;
-        min-height: 30px;
-        border-radius: 25px;
-        color: color(text-color);
-        border: 1px solid color(primary);
-        font-size: font-size(base);
-        padding: 5px 0px 5px 0px;
-        transition: all 0.4s ease;
-    }
-
     &__btn {
         margin-top: 30px;
         width: 150px;
@@ -99,19 +88,6 @@
             background: transparent;
         }
     }
-}
-
-.add-form__category-btn.work.active {
-    border: 1px solid color(work);
-    background: color(work);
-}
-.add-form__category-btn.personal.active {
-    border: 1px solid color(personal);
-    background: color(personal);
-}
-.add-form__category-btn.study.active {
-    border: 1px solid color(study);
-    background: color(study);
 }
 
 .open {

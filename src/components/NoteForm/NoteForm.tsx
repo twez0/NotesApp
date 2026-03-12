@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { type Note } from '../../types/note.types';
+import CategoryButton from '../CategoryButton/CategoryButton.tsx';
 import CloseButton from '../CloseButton/CloseButton.tsx';
 import './NoteForm.scss';
 
@@ -61,27 +62,27 @@ const NoteForm = ({ isOpen, closeForm, onAdd }: NoteFormProps) => {
                     onChange={e => setText(e.target.value)}
                 />
                 <div className='add-form__category-select'>
-                    <button
-                        type='button'
-                        className={`add-form__category-btn work ${category === 'Work' ? 'active' : ''}`}
+                    <CategoryButton
+                        isFilter={false}
+                        isActive={category === 'Work' ? true : false}
+                        label={'Работа'}
+                        category={category}
                         onClick={() => setCategory('Work')}
-                    >
-                        Работа
-                    </button>
-                    <button
-                        type='button'
-                        className={`add-form__category-btn personal ${category === 'Personal' ? 'active' : ''}`}
+                    ></CategoryButton>
+                    <CategoryButton
+                        isFilter={false}
+                        isActive={category === 'Personal' ? true : false}
+                        label={'Личное'}
+                        category={category}
                         onClick={() => setCategory('Personal')}
-                    >
-                        Личное
-                    </button>
-                    <button
-                        type='button'
-                        className={`add-form__category-btn study ${category === 'Study' ? 'active' : ''}`}
+                    ></CategoryButton>
+                    <CategoryButton
+                        isFilter={false}
+                        isActive={category === 'Study' ? true : false}
+                        label={'Учеба'}
+                        category={category}
                         onClick={() => setCategory('Study')}
-                    >
-                        Учеба
-                    </button>
+                    ></CategoryButton>
                 </div>
                 <button className='add-form__btn' onClick={addNote}>
                     Добавить
