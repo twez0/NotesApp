@@ -11,15 +11,19 @@ interface NoteListProps {
 
 const NoteList = ({ notes, openForm, onDelete }: NoteListProps) => {
     return (
-        <div className='note-list'>
-            {notes.map(note => (
-                <NoteItem
-                    key={note.id}
-                    note={note}
-                    onDelete={() => onDelete(note.id)}
-                ></NoteItem>
-            ))}
-            <AddButton onClick={openForm}></AddButton>
+        <div className='notes'>
+            <div className='notes__list'>
+                {notes.map(note => (
+                    <NoteItem
+                        key={note.id}
+                        note={note}
+                        onDelete={() => onDelete(note.id)}
+                    ></NoteItem>
+                ))}
+            </div>
+            <div className='add-button'>
+                <AddButton onClick={openForm}></AddButton>
+            </div>
         </div>
     );
 };

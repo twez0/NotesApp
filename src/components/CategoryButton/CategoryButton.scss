@@ -1,6 +1,6 @@
 @use '../../styles/config' as *;
 
-.category-btn {
+.default-category-btn {
     width: 125px;
     min-height: 30px;
     border-radius: 25px;
@@ -10,6 +10,20 @@
     padding: 5px 0px 5px 0px;
     transition: all 0.4s ease;
 }
+
+.default-category-btn.Work.active {
+    border: 1px solid color(work);
+    background: color(work);
+}
+.default-category-btn.Personal.active {
+    border: 1px solid color(personal);
+    background: color(personal);
+}
+.default-category-btn.Study.active {
+    border: 1px solid color(study);
+    background: color(study);
+}
+
 .filter-category-btn {
     width: 90px;
     min-height: 35px;
@@ -22,15 +36,19 @@
     transition: all 0.4s ease;
 }
 
-.category-btn.Work.active {
+.filter-category-btn.All.active {
+    border: 1px solid color(primary);
+    background: transparent;
+}
+.filter-category-btn.Work.active {
     border: 1px solid color(work);
     background: color(work);
 }
-.category-btn.Personal.active {
+.filter-category-btn.Personal.active {
     border: 1px solid color(personal);
     background: color(personal);
 }
-.category-btn.Study.active {
+.filter-category-btn.Study.active {
     border: 1px solid color(study);
     background: color(study);
 }

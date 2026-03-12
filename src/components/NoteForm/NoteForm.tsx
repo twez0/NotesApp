@@ -63,21 +63,21 @@ const NoteForm = ({ isOpen, closeForm, onAdd }: NoteFormProps) => {
                 />
                 <div className='add-form__category-select'>
                     <CategoryButton
-                        isFilter={false}
+                        variant='default'
                         isActive={category === 'Work' ? true : false}
                         label={'Работа'}
                         category={category}
                         onClick={() => setCategory('Work')}
                     ></CategoryButton>
                     <CategoryButton
-                        isFilter={false}
+                        variant='default'
                         isActive={category === 'Personal' ? true : false}
                         label={'Личное'}
                         category={category}
                         onClick={() => setCategory('Personal')}
                     ></CategoryButton>
                     <CategoryButton
-                        isFilter={false}
+                        variant='default'
                         isActive={category === 'Study' ? true : false}
                         label={'Учеба'}
                         category={category}

@@ -1,31 +1,29 @@
 import './CategoryButton.scss';
 
 interface CategoryButtonProps {
-    isFilter: boolean;
-    isActive: boolean;
+    variant?: 'default' | 'filter';
+    isActive?: boolean;
     label: string;
     category: string;
     onClick: () => void;
 }
 
 const CategoryButton = ({
-    isFilter,
-    isActive,
+    variant = 'default',
+    isActive = false,
     label,
     category,
     onClick,
 }: CategoryButtonProps) => {
-    if (!isFilter) {
-        return (
-            <button
-                type='button'
-                className={`category-btn ${category} ${isActive ? 'active' : ''}`}
-                onClick={onClick}
-            >
-                {label}
-            </button>
-        );
-    }
+    return (
+        <button
+            type='button'
+            className={`${variant}-category-btn ${category} ${isActive ? 'active' : ''}`}
+            onClick={onClick}
+        >
+            {label}
+        </button>
+    );
 };
 
 export default CategoryButton;
