@@ -5,6 +5,9 @@
     display: flex;
     justify-content: space-between;
     padding: 30px 0px 20px 0px;
+    @media (max-width: 768px) {
+        padding: 25px 0px 15px 0px;
+    }
 
     &__logo {
         font-family: map.get($font-family, logo);
@@ -13,5 +16,9 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         cursor: pointer;
+
+        @media (max-width: 768px) {
+            margin: 0 auto;
+        }
     }
 }

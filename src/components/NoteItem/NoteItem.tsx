@@ -18,7 +18,7 @@ const NoteItem = ({ note, onDelete }: NoteItemProps) => {
             </div>
             <div className='note-card__content'>
                 <h5>{title}</h5>
-                <p>{text.length >= 77 ? text.slice(0, 77) + '...' : text}</p>
+                <p>{text.length >= 77 ? text.slice(0, 70) + '...' : text}</p>
             </div>
             <div className='note-card__info'>
                 <p>{date}</p>

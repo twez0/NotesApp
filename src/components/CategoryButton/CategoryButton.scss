@@ -1,13 +1,12 @@
 @use '../../styles/config' as *;
 
 .default-category-btn {
-    width: 125px;
-    min-height: 30px;
+    max-width: 125px;
     border-radius: 25px;
     color: color(text-color);
     border: 1px solid color(primary);
     font-size: font-size(base);
-    padding: 5px 0px 5px 0px;
+    padding: 5px 1.875rem 5px 1.875rem;
     transition: all 0.4s ease;
 }
 
@@ -25,15 +24,15 @@
 }
 
 .filter-category-btn {
-    width: 90px;
-    min-height: 35px;
     border-radius: 25px;
     color: color(text-color);
     border: 1px solid color(primary);
     background: color(primary);
     font-size: font-size(base);
-    padding: 5px 0px 5px 0px;
+    padding: 5px 1.5rem 5px 1.5rem;
     transition: all 0.4s ease;
+    @media (max-width: 768px) {
+    }
 }
 
 .filter-category-btn.All.active {
