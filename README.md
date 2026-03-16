@@ -1,73 +1,36 @@
-# React + TypeScript + Vite
+# ToDay — Приложение для управления заметками
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Простое и функциональное приложение для создания заметок с фильтрацией по категориям и поиском. Проект создан в рамках глубокого изучения React Core и Hooks.
 
-Currently, two official plugins are available:
+![Main Screen](images/MainScreen.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Основные возможности
 
-## React Compiler
+- **CRUD операции**: Добавление и удаление заметок.
+- **Персистентность**: Все данные сохраняются в `localStorage` через кастомный хук.
+- **Умный поиск**: Живой поиск по заголовку и тексту с использованием **Debounce** (оптимизация ререндеров и производительности).
+- **Фильтрация**: Сортировка заметок по категориям (Работа, Личное, Учеба).
+- **Модальные окна**: Интуитивно понятный интерфейс добавления задач.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Технологии
 
-## Expanding the ESLint configuration
+- **React 18** (Функциональные компоненты)
+- **TypeScript** (Строгая типизация пропсов и данных)
+- **Vite** (Быстрая сборка проекта)
+- **SCSS** (Архитектура стилей)
+- **Custom Hooks** (Логика работы с хранилищем)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Как запустить проект
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Склонируйте репозиторий:
+    ```bash
+    git clone https://github.com/twez0/NotesApp.git
+    ```
+2. Установите зависимости:
+    ```bash
+    npm install
+    ```
+3. Запустите проект в режиме разработки:
+    ```bash
+    npm run dev
+    ```
