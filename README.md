@@ -1,38 +1,38 @@
-# ToDay — Приложение для управления заметками
+# ToDay — Note Management Application
 
-Простое и функциональное приложение для создания заметок с фильтрацией по категориям и поиском. Проект создан в рамках глубокого изучения React Core и Hooks.
+A simple and functional application for creating notes with category filtering and search. The project was created as part of an in-depth study of React Core and Hooks.
 
 [Live demo](https://notes-app-opal-phi.vercel.app/)
 
 ![Main Screen](images/MainScreen.png)
 
-## Основные возможности
+## Key Features
 
-- **CRUD операции**: Добавление и удаление заметок.
-- **Персистентность**: Все данные сохраняются в `localStorage` через кастомный хук.
-- **Умный поиск**: Живой поиск по заголовку и тексту с использованием **Debounce** (оптимизация ререндеров и производительности).
-- **Фильтрация**: Сортировка заметок по категориям (Работа, Личное, Учеба).
-- **Модальные окна**: Интуитивно понятный интерфейс добавления задач.
+- **CRUD operations**: Adding and deleting notes.
+- **Persistence**: All data is saved to `localStorage` via a custom hook.
+- **Smart search**:  Live search by title and text using Debounce (optimization of re-renders and performance).
+- **Filtering**: Sorting notes by categories (Work, Personal, Study).
+- **Modal windows**: Intuitive interface for adding tasks.
 
-## Технологии
+## Technologies
 
-- **React 18** (Функциональные компоненты)
-- **TypeScript** (Строгая типизация пропсов и данных)
-- **Vite** (Быстрая сборка проекта)
-- **SCSS** (Архитектура стилей)
-- **Custom Hooks** (Логика работы с хранилищем)
+- **React 18** (Functional components)
+- **TypeScript** (Strict typing of props and data)
+- **Vite** (Fast project build)
+- **SCSS** (Style architecture)
+- **Custom Hooks** (Storage logic)
 
-## Как запустить проект
+## How to run the project
 
-1. Склонируйте репозиторий:
+1. Clone the repository:
     ```bash
     git clone https://github.com/twez0/NotesApp.git
     ```
-2. Установите зависимости:
+2. Install dependencies:
     ```bash
     npm install
     ```
-3. Запустите проект в режиме разработки:
+3. Run the project in development mode:
     ```bash
     npm run dev
     ```
