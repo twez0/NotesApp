@@ -2,6 +2,8 @@
 
 Простое и функциональное приложение для создания заметок с фильтрацией по категориям и поиском. Проект создан в рамках глубокого изучения React Core и Hooks.
 
+[Live demo](https://vercel.com/twezos-projects)
+
 ![Main Screen](images/MainScreen.png)
 
 ## Основные возможности
